@@ -1,0 +1,59 @@
+ <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+     <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   </head>
+
+<body>
+ 
+ 
+ 
+ 
+ 
+ <h1>Modifier un Lieu:</h1>
+       
+     
+      <form th:action="@{/home/editLieu}"  th:object="${lieuEdit}" method="POST" enctype="multipart/form-data">
+         
+         <div class="form-group">
+   <!--  <label for="formGroupExampleInput">codeInsee :</label> -->
+    <input type="hidden" class="form-control" id="formGroupExampleInput" th:field="*{codeInsee}" />
+</div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">nomCom :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{nomCom}" />
+  
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Longitude :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{longitude}" />
+  
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Latitude :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{latitude}" />
+ 
+  </div>
+  
+<div class="form-group">
+    <label for="formGroupExampleInput2">Photo:</label>
+    <input type="file" class="form-control" id="formGroupExampleInput2" name="picture" placeholder="Exemple : 453321..."/>
+ 
+  </div>
+ 
+    <button type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-upload"></span> Modifier</button>
+    
+    
+    
+      </form>
+      
+      
+            
+   </body>
+</html>
+                                                                                        

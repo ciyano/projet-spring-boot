@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  
+  
+  
+   </head>
+   
+   <body>
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a th:href="@{/home}">Accuiel</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Lieux <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listLieu}">Consulter les lieux</a></li>
+            <li><a th:href="@{/home/formulaireLieu}">Ajouter un lieu</a></li>
+          </ul>
+        </li>
+        
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Départements <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listDep}">Consulter les departement</a></li>
+            <li><a th:href="@{/home/formulaireDepartement}">Ajouter un departement</a></li>
+          </ul>
+        </li>
+        
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Monuments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listMonument}">Consulter les monuments</a></li>
+            <li><a th:href="@{/home/formulaireMonument}">Ajouter un monument</a></li>
+          </ul>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+ 
+ 
+    <div class ="container">
+   		<div class="card">
+   			<div class="card-block">
+   				<table class="table table-hover">
+   					<thead> 
+   						<th>codeInsee</th>
+   						<th>nomCom</th>
+  						<th>Longitude </th>
+  						<th>Latitude</th>
+  						<th>Departement</th>
+  						<th>Photo</th>
+  						<th>Supprimer</th>
+  						<th>Modifier</th>
+  	 
+  	 
+ 					</thead>
+   <tbody>
+     <tr th:each="l : ${lieux}">
+     	<td th:text="${l.codeInsee}"></td>
+     	<td th:text="${l.nomCom}"></td>
+     	<td th:text="${l.longitude}"></td>
+     	<td th:text="${l.latitude}"></td>
+     	<td th:text="${l.departement}"></td>
+     	<td>
+     	<img class="img-circle" th:src="@{getPhoto(codeInsee=${l.codeInsee})}" width="100" height="100"/>
+     	</td>
+     	<td><a th:href="@{supprimer(codeInsee= ${l.codeInsee})}"><span class="glyphicon glyphicon-trash"> </span> supprimer</a></td>
+     	<td><a th:href="@{edit/}+ ${l.codeInsee}" ><span class="glyphicon glyphicon-edit"></span> modifier</a></td>
+     	
+   </tbody>
+     				</table>
+     			</div>
+     		</div>
+     	</div>
+     
+     
+     
+     
+     <br/>
+     <br/>
+     <br/>
+    </body>
+    </html>

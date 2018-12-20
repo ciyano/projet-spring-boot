@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.jackrutorial.SpringBootSigninSignupExempleApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.081 s - in com.jackrutorial.SpringBootSigninSignupExempleApplicationTests

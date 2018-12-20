@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+     <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   </head>
+
+<body>
+
+  
+
+
+
+<br/>
+<br/>
+      <h1>Ajouter un Monument:</h1>
+       
+     
+      <form th:action="@{/home/addform}"  th:object="${MonForm}" method="POST">
+     
+         
+         <div class="form-group">
+    <label for="formGroupExampleInput">codeMonument:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" th:field="*{codeM}" placeholder="codeM..."/>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">nomM:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{nomM}" placeholder="nomM..."/>
+  </div>
+   <div class="form-group">
+    <label for="formGroupExampleInput2">proprio :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{proprietaire}" placeholder="proprietaire..."/>
+  </div>
+   <div class="form-group">
+    <label for="formGroupExampleInput2">type monument :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{typeMonument}" placeholder="typeMonument..."/>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Longitude :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{longitude}" placeholder="Exemple : 234433"/>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Latitude :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{latitude}" placeholder="Exemple : 453321..."/>
+  </div>
+ 
+    <button type="submit" class="btn btn-primary">Ajouter un Monument</button>
+    
+    
+    
+      </form>
+       
+     
+       
+       
+   </body>
+</html>

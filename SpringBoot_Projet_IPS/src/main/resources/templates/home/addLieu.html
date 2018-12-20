@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+     <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   </head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a th:href="@{/home}">Accuiel</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Lieux <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listLieu}">Consulter les lieux</a></li>
+            <li><a th:href="@{/home/formulaireLieu}">Ajouter un lieu</a></li>
+          </ul>
+        </li>
+        
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Départements <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listDep}">Consulter les departement</a></li>
+            <li><a th:href="@{/home/formulaireDepartement}">Ajouter un departement</a></li>
+          </ul>
+        </li>
+        
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Monuments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listMonument}">Consulter les monuments</a></li>
+            <li><a th:href="@{/home/formulaireMonument}">Ajouter un monument</a></li>
+          </ul>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a th:href="@{/home}">Accuiel</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Lieux <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listLieu}">Consulter les lieux</a></li>
+            <li><a th:href="@{/home/formulaireLieu}">Ajouter un lieu</a></li>
+          </ul>
+        </li>
+        
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Départements <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listDep}">Consulter les departement</a></li>
+            <li><a th:href="@{/home/formulaireDepartement}">Ajouter un departement</a></li>
+          </ul>
+        </li>
+        
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}">Monuments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a th:href="@{/home/listMonument}">Consulter les monuments</a></li>
+            <li><a th:href="@{/home/formulaireMonument}">Ajouter un monument</a></li>
+          </ul>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+
+<br/>
+<br/>
+      <h1>Ajouter un Lieu:</h1>
+       
+     
+      <form th:action="@{/home/addLieu}"  th:object="${lieu}" method="POST" enctype="multipart/form-data" >
+     
+         
+         <div class="form-group">
+    <label for="formGroupExampleInput">codeInsee :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" th:field="*{codeInsee}" placeholder="codeInsee..."/>
+ 	<span class="text-danger" th:errors="*{codeInsee}"></span>
+</div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">nomCom :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{nomCom}" placeholder="nomCom..."/>
+   	<span class="text-danger" th:errors="*{nomCom}"></span>
+  
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Longitude :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{longitude}" placeholder="Exemple : 234433"/>
+     	<span class="text-danger" th:errors="*{longitude}"></span>
+  
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Latitude :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" th:field="*{latitude}" placeholder="Exemple : 453321..."/>
+    	<span class="text-danger" th:errors="*{latitude}"></span>
+ 
+  </div>
+  
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Photo:</label>
+    <input type="file" class="form-control" id="formGroupExampleInput2" name="picture" placeholder="Exemple : 453321..."/>
+ 
+  </div>
+ 
+ 
+    <button type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-upload"></span> Valider</button>
+    
+    
+    
+      </form>
+       
+     
+       
+       
+   </body>
+</html>
